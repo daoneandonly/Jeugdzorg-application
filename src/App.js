@@ -16,21 +16,6 @@ class App extends Component {
     idNumber: 0
   }
 
-  upIdNumber = (e) => {
-    var currentId = this.state.idNumber
-    console.log(this.state.idNumber)
-    this.setState( () => {
-      if (currentId < this.state.dossierNumber.length - 1) {
-        return {idNumber: currentId + 1}
-      }
-      else {
-        currentId = 0
-        return {idNumber: currentId}
-        }
-      }
-    )
-}
-
   changeId = (newId) => {
       this.setState({idNumber: newId})
       console.log(this.state.idNumber)

@@ -21,9 +21,7 @@ loopedOptions = () => {
           <select onChange={() => {this.props.changeId(document.querySelector('select').value - 1)}}>
             {this.loopedOptions()}
           </select>
-          {/* <button>Verander</button> */}
         </form>
-        {/* <button onClick={this.handleClick}>Click</button> */}
       </div>
     )
   }
