@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App">
         <Nav dossierNumber={this.state.dossierNumber[this.state.idNumber] } />
         <Leftbar upIdNumber={this.upIdNumber}/>
-        <Main />
+        <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} /> 
       </div>
     );
   }

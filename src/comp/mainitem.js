@@ -5,7 +5,9 @@ class Mainitem extends React.Component {
     return(
       <div className='main-item'>
         <div className='item-content'>
-        <p> Item Component</p>
+          <p>Naam: {this.props.dossierNumber.name}</p>
+          <p>Leeftijd: {this.props.dossierNumber.age}</p>
+          <p>id: {this.props.dossierNumber.id}</p>
         </div>
       </div>
     )
