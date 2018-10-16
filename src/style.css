@@ -1,4 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #b8b8b8;
   font-family: Segoe UI;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav {
+  height: 5vh;
+  width: 100%;
+  background: #191919;
+  color: #FEFEFE;
+  padding: .5em;
+  width: 100%;
+}
+
+.leftbar {
+  padding: 1em;
+  width: 15%;
+  background-color: #F5F5F5;
+  height: 95vh;
+}
+
+.main {
+  background-color: skyblue;
+  /* min-width: 65em; */
+  width: 85%;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-item {
+  width: 24%;
+  border: .1em solid black;
+  height: 30%;
+  padding: .5em;
+}
+
+.item-content {
+  display: block;
+  width: 10em;
+  border: .1em solid white;
+  text-align: center;
 }
