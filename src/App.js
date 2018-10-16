@@ -7,9 +7,11 @@ import Main from './comp/main'
 class App extends Component {
   state = {
     dossierNumber: [
-      {name: 'kind1', age: 10, id: 1},
-      {name: 'kind2', age: 65, id: 2},
-      {name: 'kind3', age: 12, id: 3}
+      {name: 'Steven', age: 10, id: 1},
+      {name: 'Dennis', age: 65, id: 2},
+      {name: 'Tim', age: 12, id: 3},
+      {name: 'Guus', age: 5, id: 4},
+      {name: 'Titus', age: 21, id: 5}
     ],
     idNumber: 0
   }
@@ -29,12 +31,18 @@ class App extends Component {
     )
 }
 
+  changeId = (newId) => {
+      this.setState({idNumber: newId})
+      console.log(this.state.idNumber)
+
+  }
+
   render() {
     return (
       <div className="App">
         <Nav dossierNumber={this.state.dossierNumber[this.state.idNumber] } />
-        <Leftbar upIdNumber={this.upIdNumber}/>
-        <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} /> 
+        <Leftbar changeId={this.changeId}  allDossiers={this.state.dossierNumber} upIdNumber={this.upIdNumber}/>
+        <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} />
       </div>
     );
   }
