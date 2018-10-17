@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import './style.css';
+import './styles/style.css';
 import Nav from './comp/nav'
 import Leftbar from './comp/leftbar'
 import Main from './comp/main'
+import Selection from './comp/selection'
+import Data from './data/data.json'
 
 class App extends Component {
   state = {
@@ -14,7 +16,8 @@ class App extends Component {
       {name: 'Guus', age: 5, id: 4},
       {name: 'Titus', age: 21, id: 5}
     ],
-    idNumber: 0
+    idNumber: 0,
+    data: ''
   }
 
   changeId = (newId) => {
@@ -23,13 +26,15 @@ class App extends Component {
 
   }
 
+
   render() {
     return (
       <BrowserRouter>
         <div className="App">
           <Nav dossierNumber={this.state.dossierNumber[this.state.idNumber] } />
           <Leftbar changeId={this.changeId}  allDossiers={this.state.dossierNumber} upIdNumber={this.upIdNumber}/>
-          <Route exact path='/' render={() => <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} /> } />
+          <Route exact  path='/Selection' component={Selection} />
+          <Route path='/' render={() => <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} /> } />
         </div>
       </BrowserRouter>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
 import Mainitem from './mainitem'
+import Data from '../data/data.json'
+
 
 class Main extends React.Component {
-  // state = {
-  //   dossier: this.props.dossierNumber
-  // }
+
+
+
   render(){
     return(
       <div className='main'>
