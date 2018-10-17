@@ -18,6 +18,9 @@ loopedOptions = () => {
      return(
       <div className='leftbar'>
         <form>
+          <div className='category'>
+            <p>Category 1</p>
+          </div>
           <select onChange={() => {this.props.changeId(document.querySelector('select').value - 1)}}>
             {this.loopedOptions()}
           </select>

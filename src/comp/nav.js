@@ -5,7 +5,7 @@ class Nav extends React.Component {
     var huidigDossier = this.props.dossierNumber
     return(
       <div className='nav'>
-        <p>Navbar Component dossier: {huidigDossier.name}, leeftijd: {huidigDossier.age}</p>
+        <p>Dossier: {huidigDossier.name}, {huidigDossier.age} jaar oud.</p>
       </div>
     )
   }

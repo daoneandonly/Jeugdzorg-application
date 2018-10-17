@@ -11,15 +11,6 @@ class Main extends React.Component {
         <Mainitem dossierNumber={this.props.dossierNumber}/>
         <Mainitem dossierNumber={this.props.dossierNumber}/>
         <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
-        <Mainitem dossierNumber={this.props.dossierNumber}/>
       </div>
     )
   }

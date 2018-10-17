@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'
 import './style.css';
 import Nav from './comp/nav'
 import Leftbar from './comp/leftbar'
@@ -24,11 +25,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Nav dossierNumber={this.state.dossierNumber[this.state.idNumber] } />
-        <Leftbar changeId={this.changeId}  allDossiers={this.state.dossierNumber} upIdNumber={this.upIdNumber}/>
-        <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Nav dossierNumber={this.state.dossierNumber[this.state.idNumber] } />
+          <Leftbar changeId={this.changeId}  allDossiers={this.state.dossierNumber} upIdNumber={this.upIdNumber}/>
+          <Route exact path='/' render={() => <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]} /> } />
+        </div>
+      </BrowserRouter>
     );
   }
 }
