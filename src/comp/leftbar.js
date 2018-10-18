@@ -1,6 +1,7 @@
 import React from 'react';
 import Data from '../data/data.json'
 import { Link } from 'react-router-dom'
+import slugify from 'slugify'
 
 class Leftbar extends React.Component {
 
@@ -16,35 +17,31 @@ allOtptions = () => {
   return options
 }
 
+
+
 allCategories = () => {
   const unique = [...new Set(Data.map((x) => x.Categorie))]
-  console.log(unique)
   const uniqueCat = unique.map((x) => {
+    var key = 0
     return (
-      <div className='category' >
-        <Link to={'/Categorie/' + x}>
-          <p>{x}</p>
-        </Link>
-      </div>)
+      <Link className='category' key={x + key + 1} to={'/categorie/' + slugify(x, {lower: true})} onClick={() => {this.props. setCurrentQuestion(x)}} >
+        <p>{x}</p>
+      </Link>
+    )
   })
-  console.log(uniqueCat)
   return uniqueCat
 }
 
   render(){
      return(
       <div className='leftbar'>
-        <form>
-          <div className='category overzicht'>
-            <Link to='/Selection'>
+          <Link className='category overzicht' to='/'>
               <h3>Overzicht</h3>
-            </Link>
-          </div>
+          </Link>
           {this.allCategories()}
-          {/* <select onChange={() => {this.props.changeId(document.querySelector('select').value - 1)}}>
+          {/* {<select onChange={() => {this.props.changeId(document.querySelector('select').value - 1)}}>
             {this.allOtptions()}
-          </select> */}
-        </form>
+          </select>} */}
       </div>
     )
   }

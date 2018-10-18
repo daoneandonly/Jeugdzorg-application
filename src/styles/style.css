@@ -5,6 +5,8 @@
 a, a:hover, a:visited {
   text-decoration: none;
   color:inherit;
+  padding: 0em;
+  margin: 0em;
 }
 
 body {
@@ -12,7 +14,6 @@ body {
   font-family: Segoe UI;
   padding: 0;
   margin: 0;
-  border: none;
 }
 
 .App {
@@ -23,20 +24,26 @@ body {
 }
 
 .nav {
-  height: 5vh;
+  height: 8.3%;
   width: 100%;
-  background: #191919;
+  background-color: rgb(62, 126, 161);
   color: #FEFEFE;
   padding: .5em;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .leftbar {
-  padding: 1em;
-  width: 15%;
-  background-color: rgb(245, 245, 245);
-  height: 95vh;
-  overflow-y: scroll;
+  /* padding: 1em; */
+  width: 25%;
+    background-color: rgb(147, 197, 223);
+  /* height: 95vh; */
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 select {
@@ -44,34 +51,70 @@ select {
 }
 
 .main {
-  background-color: skyblue;
-  width: 85%;
-  padding: .1em;
+  background-color: rgb(245, 245, 245);;
+  width: 75%;
+  /* padding: .1em; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.main h1 {
+  width: 100%;
+  text-align: center;
 }
 
 .main-item {
-  width: 100%;
+  width: 50%;
   border: .1em solid black;
   margin: 1em;
   padding: .5em;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
+  min-height: 25em;
 }
 
 .item-content {
   display: block;
   width: 50%;
-  text-align: center;
+  /* text-align: center; */
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.category {
-  border-bottom: .01em solid black;
-  margin-bottom: 1em;
+.category  {
+  padding: 0em;
+  margin: 0em;
+  padding: .5em;
+  width: 50%;
+  height: 8.33%;
+  text-align: center;
+}
+
+.category:hover {
+  background-color: rgb(179, 207, 222);
+  padding: .5em;
+}
+
+.overzicht {
+  text-align: center;
+  background-color: rgb(62, 126, 161);
+  width: 100%;
+  color: white;
+}
+
+.overzicht h3 {
+  color: white;
+}
+
+.option {
+  width: 25%;
+  padding: 1em;
+}
+
+.optionwrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }

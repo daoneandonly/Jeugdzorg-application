@@ -1,13 +1,14 @@
 import React from 'react';
+import Data from '../data/data.json'
+import slugify from 'slugify'
 
 class Mainitem extends React.Component {
+
+
   render(){
     return(
       <div className='main-item'>
         <div className='item-content'>
-          <p>Naam: {this.props.dossierNumber.name}</p>
-          <p>Leeftijd: {this.props.dossierNumber.age}</p>
-          <p>id: {this.props.dossierNumber.id}</p>
         </div>
       </div>
     )
