@@ -39,9 +39,6 @@ allCategories = () => {
               <h3>Overzicht</h3>
           </Link>
           {this.allCategories()}
-          {/* {<select onChange={() => {this.props.changeId(document.querySelector('select').value - 1)}}>
-            {this.allOtptions()}
-          </select>} */}
       </div>
     )
   }

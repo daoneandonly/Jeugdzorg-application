@@ -166,6 +166,10 @@ select {
   justify-content: flex-start;
 }
 
+.selectuser {
+  border-bottom: .01em solid black;
+}
+
 .selectuser img {
   width: 10em;
 }

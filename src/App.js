@@ -9,6 +9,12 @@ import SelectUser from './comp/selectuser'
 import New from  './comp/new'
 
 class App extends Component {
+
+// state consists out of:
+// Dossiernumber which is an array of objects and has individual values and an empty info object
+// idnumber which changes depending on which dossier should be shown
+// currentQuestion gives the result which should be shown as a question
+
   state = {
     dossierNumber: [
       {name: 'Steven', age: 10, bdate: '06-07-1992', id: 1, risico: 0.5, info: {'Ouders gescheiden':  'Ja' , 'Type huishouden': 'Eenpersoonshuishouden'}},
@@ -21,7 +27,7 @@ class App extends Component {
     currentQuestion: 'Intercept',
   }
 
-// change id in State to change Person
+// function to change id in State to change Person
 
   changeId = (newId) => {
       this.setState({idNumber: newId})
@@ -29,10 +35,13 @@ class App extends Component {
   }
 
 // change category to selected in leftbar
+
   setCurrentQuestion = (question) => {
     this.setState({currentQuestion: question})
     console.log('the current question is: ' + this.state.currentQuestion)
   }
+
+// function to give a set of answers to a particular question set at state:currentQuestion
 
   handleQuestion = () => {
     const set = Data.filter((x) => x.Categorie === this.state.currentQuestion)
@@ -40,16 +49,20 @@ class App extends Component {
     return set
   }
 
+//Create a new Dossier
+
   newDossier = (newKind, newKindId) => {
     const newList = [...this.state.dossierNumber, newKind]
-    this.setState({dossierNumber: newList})
   }
+
+// function to create a new
 
   addInfo = (a, b) => {
     const newInfo = this.state.dossierNumber[this.state.idNumber].info
     newInfo[a] = b
     this.setState({a: newInfo})
 
+    // const oudeLijst 
     // const newRisico = this.state.dossierNumber[this.state.idNumber].risico + 0.2
     // this.setState(dossierNumber: newRisico)
   }
