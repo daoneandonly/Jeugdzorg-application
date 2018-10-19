@@ -24,7 +24,7 @@ allCategories = () => {
   const uniqueCat = unique.map((x) => {
     var key = 0
     return (
-      <Link className='category' key={x + key + 1} to={'/categorie/' + slugify(x, {lower: true})} onClick={() => {this.props. setCurrentQuestion(x)}} >
+      <Link className='category' key={x + key + 1} to={'/categorie/' + slugify(x, {lower: true})} onClick={() => { this.props.setCurrentQuestion(x)}} >
         <p>{x}</p>
       </Link>
     )
@@ -35,7 +35,7 @@ allCategories = () => {
   render(){
      return(
       <div className='leftbar'>
-          <Link className='category overzicht' to='/'>
+          <Link className='category overzicht' to='/overzicht'>
               <h3>Overzicht</h3>
           </Link>
           {this.allCategories()}

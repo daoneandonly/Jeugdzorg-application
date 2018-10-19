@@ -12,6 +12,12 @@
     "Gewicht": "-0,12611"
   },
   {
+    "Coefficients": "GESLACHT vrouwen",
+    "Categorie": "Geslacht",
+    "Name": "Vrouw",
+    "Gewicht": "0"
+  },
+  {
     "Coefficients": "Herkomst ouders: Beide ouders niet Nederlands",
     "Categorie": "Herkomst",
     "Name": "Beide ouders niet Nederlands",

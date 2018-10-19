@@ -11,15 +11,29 @@ class Main extends React.Component {
 
   allValues = () => {
     const huidigDossier = this.props.dossierNumber
-    const values = []
-    // console.log(Object.keys(huidigDossier).length -1)
-    for (let i = 0; i < Object.keys(huidigDossier).length; i++) {
-    values.push(
-      <p>{Object.keys(huidigDossier)[i]}: {Object.values(huidigDossier)[i]}</p>
-    )}
+    const values = [
+      <div key={Math.random()}>
+        <p key={Math.random()}>Naam: {Object.values(huidigDossier)[0]}</p>
+        <p key={Math.random()}>Leeftijd: {Object.values(huidigDossier)[1]}</p>
+        <p key={Math.random()}>Geboortedatum: {Object.values(huidigDossier)[2]}</p>
+      </div>]
     return (
       values
       )
+  }
+
+  printInfo = () => {
+    const keyList = Object.keys(this.props.dossierNumber.info)
+    const print = keyList.map(x => {
+      return(
+        <p>
+          {console.log(this.props.dossierNumber.info.x)}
+          {x}: {this.props.dossierNumber.info[x]}
+        </p>
+      )
+
+    })
+    return print
   }
 
   render(){
@@ -31,6 +45,17 @@ class Main extends React.Component {
         <div className='main-item'>
           <div className='item-content'>
             {this.allValues()}
+            <div>
+              <img alt='plaatje' src='https://davismarketingcompany.com/wp-content/uploads/2016/01/avatar_placeholder_small.png' />
+            </div>
+          </div>
+        </div>
+        <div className='main-item'>
+          <div className='item-content'>
+            <h2>Bekende gegevens</h2>
+            <div>
+              {this.printInfo()}
+            </div>
           </div>
         </div>
       </div>

@@ -6,18 +6,19 @@ import Main from './comp/main'
 import Selection from './comp/selection'
 import Data from './data/data.json'
 import SelectUser from './comp/selectuser'
+import New from  './comp/new'
 
 class App extends Component {
   state = {
     dossierNumber: [
-      {name: 'Steven', age: 10, id: 1,},
-      {name: 'Dennis', age: 65, id: 2},
-      {name: 'Tim', age: 12, id: 3},
-      {name: 'Guus', age: 5, id: 4},
-      {name: 'Titus', age: 21, id: 5}
+      {name: 'Steven', age: 10, bdate: '06-07-1992', id: 1, risico: 0.5, info: {'Ouders gescheiden':  'Ja' , 'Type huishouden': 'Eenpersoonshuishouden'}},
+      {name: 'Dennis', age: 16, bdate: '06-07-1992', id: 2, risico: 0.0, info : {}},
+      {name: 'Tim', age: 12, bdate: '06-07-1992', id: 3, risico: 0.0, info : {}},
+      {name: 'Guus', age: 5, bdate: '06-07-1992', id: 4, risico: 0.0, info : {}},
+      {name: 'Titus', age: 8, bdate: '06-07-1992', id: 5, risico: 0.0, info : {}}
     ],
     idNumber: 0,
-    currentQuestion: 'Soort woning'
+    currentQuestion: 'Intercept',
   }
 
 // change id in State to change Person
@@ -39,6 +40,20 @@ class App extends Component {
     return set
   }
 
+  newDossier = (newKind, newKindId) => {
+    const newList = [...this.state.dossierNumber, newKind]
+    this.setState({dossierNumber: newList})
+  }
+
+  addInfo = (a, b) => {
+    const newInfo = this.state.dossierNumber[this.state.idNumber].info
+    newInfo[a] = b
+    this.setState({a: newInfo})
+
+    // const newRisico = this.state.dossierNumber[this.state.idNumber].risico + 0.2
+    // this.setState(dossierNumber: newRisico)
+  }
+
 
   render() {
     return (
@@ -47,7 +62,6 @@ class App extends Component {
           <Leftbar
             changeId={this.changeId}
             allDossiers={this.state.dossierNumber}
-            upIdNumber={this.upIdNumber}
             currentQuestion={this.state.currentQuestion}
             setCurrentQuestion={this.setCurrentQuestion}
           />
@@ -56,9 +70,10 @@ class App extends Component {
             component={Selection}
           />
           <Route
-            exact path='/'
+            path='/overzicht'
             render={() =>
-              <Main dossierNumber={this.state.dossierNumber[this.state.idNumber]}
+              <Main
+                dossierNumber={this.state.dossierNumber[this.state.idNumber]}
             />
           }/>
           <Route
@@ -68,12 +83,24 @@ class App extends Component {
                 dossierNumber={this.state.dossierNumber[this.state.idNumber]}
                 currentQuestion={this.state.currentQuestion}
                 handleQuestion={this.handleQuestion}
+                addInfo={this.addInfo}
               /> }
             />
             <Route
-              path='/selectuser' render={() => 
+              exact path='/' render={() =>
                 <SelectUser
                   dossierNumber={this.state.dossierNumber}
+                  changeId={this.changeId}
+                />
+              }
+            />
+            <Route
+              path='/new'
+              render={() =>
+                <New
+                  dossierNumber={this.state.dossierNumber}
+                  newDossier={this.newDossier}
+                  changeId={this.changeId}
                 />
               }
             />
